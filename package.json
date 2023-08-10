@@ -15,7 +15,7 @@
     "bootstrap": "^5.1.3",
     "caniuse-lite": "^1.0.30001517",
     "chmod": "^0.2.1",
-    "easyinvoice": "^3.0.16",
+    "easyinvoice": "^3.0.23",
     "firebase": "^10.0.0",
     "react": "^18.1.0",
     "react-bootstrap": "^2.4.0",
