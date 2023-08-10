@@ -1,0 +1,219 @@
+body {
+    background-color: white;
+  }
+  .top{
+    width: 100%;
+    background-color: white;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .ide {
+    display: flex;
+    align-items: center;
+    width: 30%;
+  }
+  .idew {
+    display: flex;
+    align-items: center;
+    width: 20%;
+  }
+  .header {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav {
+    width: 100%;
+    height: 13vh;
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav div {
+    padding: 1%;
+    font-weight: 700;
+    transition: all .3s ease-in;
+    background-color: teal;
+  }
+  .nav div:hover {
+    background-color: maroon;
+    cursor: pointer;
+  }
+  .quality {
+    width: 70%;
+    margin: 0 auto;
+    min-height: 40vh;
+    height: max-content;
+    background-color: white;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.334);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .quad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    min-width: 250px;
+  }
+  .imgs {
+    margin-right: 3%;
+  }
+  .services {
+    width: 100%;
+    height: 110vh;
+    background-color: rgba(0, 128, 128, 0.222);
+    padding-top: 3%;
+    height: max-content;
+    padding-bottom: 3%;
+  }
+  
+  .servh {
+    color: maroon;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.312);
+    font-weight: 900;
+    text-decoration: underline;
+    font-size: 40px;
+  }
+  
+  .flexserv {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+  }
+  .flexservx {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+  }
+  .listd {
+    margin-left: 5%;
+    padding-top: 5%;
+  }
+  .listdh h1 {
+    color: green;
+    font-weight: 900;
+    margin-bottom: 8%;
+  }
+  .listdh li {
+    font-size: medium;
+    font-weight: 900;
+    margin-bottom: 5%;
+  }
+  .kit {
+    width: 100%;
+    height: 80vh;
+    background-color: white;
+    padding-top: 3%;
+    height: max-content;
+  }
+  .kith1 {
+    color: maroon;
+    font-weight: 900;
+    text-decoration: underline;
+    font-size: 40px;
+  }
+  .fleds {
+    padding-top: 5%;
+    padding-left: 5%;
+  }
+  .fleds h3 {
+    font-size: large;
+    margin-bottom: 5%;
+  }
+  .fleds li {
+    margin-bottom: 9%;
+  }
+  .btn {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 5%;
+    cursor: pointer;
+    transition: all 1s ease-in;
+    padding-right: 5%;
+    border-radius: 40px;
+    border: 1px solid maroon;
+  }
+  .btn:hover {
+    background-color: maroon;
+    color: white;
+  }
+  .huj {
+    width: 45%;
+    margin-left: 8%;
+    height: 70vh;
+    background-size: cover;
+  }
+  .imghj {
+  margin-left: 3%;
+  }
+  .don {
+    display: block;
+  }
+  .hujy {
+    width: 90%;
+    margin-left: 8%;
+    height: 70vh;
+    background-size: cover;
+  }
+  
+  @media (max-width: 900px) {
+    .services {
+      overflow: hidden;
+    }
+    .kit {
+      overflow: hidden;
+    }
+    .ide {
+      display: none;
+    }
+    .top {
+      justify-content: space-around;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .header {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 550px) {
+    .don {
+      display: none;
+    }
+    .quad {
+      margin-bottom: 5vh;
+    }
+    .quality {
+      padding: 9%;
+    }
+    .servh {
+      color: maroon;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.312);
+      font-weight: 900;
+      text-decoration: underline;
+      font-size: 20px;
+    }
+    .imghj {
+      width: 200px;
+      margin-left: 20%;
+    }
+    .imghjf {
+      width: 200px;
+      margin-left: 20%;
+    }
+    .flexserv {
+      flex-direction: column;
+    }
+    .flexservx {
+      flex-direction: column-reverse;
+    }
+  }
