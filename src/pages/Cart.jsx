@@ -159,7 +159,7 @@ const Cart = ({ setSumx, setCartx, quantity, setQuantity }) => {
     const data = await response.json()
     console.log(data)
     if(data) {
-      window.location = "https://threadsandtextiles.netlify.app"
+      window.location = "/"
     }
   }
 

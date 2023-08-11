@@ -114,7 +114,7 @@ const Product = ({ item, quantity, setQuantity }) => {
     const data = await response.json()
     console.log(data)
     handleShow()
-    window.location = "/"
+    window.location = "/home"
   }
 
   const addToCart = async () => {

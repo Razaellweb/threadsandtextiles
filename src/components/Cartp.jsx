@@ -86,7 +86,7 @@ const Cartp = ({ product, cart, id }) => {
 
     const data = await response.json()
     console.log(data)
-    window.location = "https://threadsandtextiles.netlify.app"
+    window.location = "/cart"
   }
   return (
     <div>
