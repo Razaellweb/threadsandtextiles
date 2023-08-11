@@ -11,7 +11,6 @@ import app from "../firebase";
 import { mobile } from "../responsive";
 import { PaystackButton } from "react-paystack";
 import { useNavigate } from "react-router-dom";
-import easyinvoice from "easyinvoice";
 
 const Container = styled.div`
   width: 100vw;
@@ -181,7 +180,7 @@ const Checkout = ({ cartx, sumx, id }) => {
         year: "numeric",
         month: "long",
         day: "numeric",
-      })
+      }),
     },
     // The products you would like to see on your invoice
     // Total values are being calculated automatically
@@ -216,7 +215,7 @@ const Checkout = ({ cartx, sumx, id }) => {
       // "price": "Prijs", // Defaults to 'Price'
       // "product-total": "Totaal", // Defaults to 'Total'
       // "total": "Totaal", // Defaults to 'Total'
-       "vat": 0 // Defaults to 'vat'
+      vat: 0, // Defaults to 'vat'
     },
   };
 
@@ -246,7 +245,10 @@ const Checkout = ({ cartx, sumx, id }) => {
         console.error("Fetch error:", error);
       });
     //await fs.writeFileSync("invoice.pdf", result.pdf, "base64");
-    easyinvoice.download("myInvoice.pdf", result.pdf);
+    const downloadLink = document.createElement("a");
+    downloadLink.href = result.pdf;
+    downloadLink.download = "convertedPDFFile.pdf";
+    downloadLink.click();
   };
 
   const handleClick = () => {
