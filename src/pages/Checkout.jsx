@@ -11,6 +11,7 @@ import app from "../firebase";
 import { mobile } from "../responsive";
 import { PaystackButton } from "react-paystack";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Container = styled.div`
   width: 100vw;
@@ -112,6 +113,12 @@ const Checkout = ({ cartx, sumx, id }) => {
       setSsn(sumx * 1 + 8000 * 1);
     }
   };
+
+  useEffect(() => {
+    if (file !== null) {
+      alert('On the next page, Click card and then click on success to ensure that we get your transfer and order details');
+    }
+  }, [file]);
 
   const componentProps = {
     email,
@@ -230,7 +237,9 @@ const Checkout = ({ cartx, sumx, id }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        data: data
+      }),
     })
       .then((response) => {
         if (!response.ok) {
@@ -239,16 +248,17 @@ const Checkout = ({ cartx, sumx, id }) => {
         return response.json();
       })
       .then((data) => {
-        console.log("Invoice created successfully:", data);
+       // console.log("Invoice created successfully:", data.data.pdf);
+        const downloadLink = document.createElement("a");
+        downloadLink.href = "data:application/pdf;base64," + data.data.pdf;
+        downloadLink.download = "convertedPDFFile.pdf";
+        downloadLink.click();
       })
       .catch((error) => {
         console.error("Fetch error:", error);
       });
     //await fs.writeFileSync("invoice.pdf", result.pdf, "base64");
-    const downloadLink = document.createElement("a");
-    downloadLink.href = result.pdf;
-    downloadLink.download = "convertedPDFFile.pdf";
-    downloadLink.click();
+  
   };
 
   const handleClick = () => {
@@ -319,8 +329,8 @@ const Checkout = ({ cartx, sumx, id }) => {
     if (data === "Order Placed") {
       settleCart();
       createInvoice();
-      alert("Order Completed");
-      navigate("/");
+      alert("Order Completed, please wait for your receipt to download");
+      navigate("/home");
     } else {
       alert("an error occured");
     }
