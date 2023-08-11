@@ -223,13 +223,30 @@ const Checkout = ({ cartx, sumx, id }) => {
   //Create your invoice! Easy!
   // var fs = require("fs");
   //Create your invoice! Easy!
+  const apiUrl = "https://api.easyinvoice.cloud/v2/free/invoices";
+
   const createInvoice = async () => {
-    easyinvoice.createInvoice(data, async function (result) {
-      //The response will contain a base64 encoded PDF file
-      console.log(result);
-      //await fs.writeFileSync("invoice.pdf", result.pdf, "base64");
-      easyinvoice.download("myInvoice.pdf", result.pdf);
-    });
+    const result = await fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Invoice created successfully:", data);
+      })
+      .catch((error) => {
+        console.error("Fetch error:", error);
+      });
+    //await fs.writeFileSync("invoice.pdf", result.pdf, "base64");
+    easyinvoice.download("myInvoice.pdf", result.pdf);
   };
 
   const handleClick = () => {
