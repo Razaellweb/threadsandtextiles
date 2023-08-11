@@ -172,7 +172,7 @@ const Cart = ({ setSumx, setCartx, quantity, setQuantity }) => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton onClick={() => { navigate("/") }}>CONTINUE SHOPPING</TopButton>
+          <TopButton onClick={() => { navigate("/home") }}>CONTINUE SHOPPING</TopButton>
           <TopTexts>
             <TopText>Shopping Bag({items})</TopText>
             <TopText>Your Wishlist (0)</TopText>
