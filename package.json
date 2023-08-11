@@ -15,7 +15,6 @@
     "bootstrap": "^5.1.3",
     "caniuse-lite": "^1.0.30001517",
     "chmod": "^0.2.1",
-    "easyinvoice": "^3.0.23",
     "firebase": "^10.0.0",
     "react": "^18.1.0",
     "react-bootstrap": "^2.4.0",
@@ -29,9 +28,6 @@
     "redux-persist": "^6.0.0",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
-  },
-  "peerDependencies": {
-    "pdfjs-dist": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
