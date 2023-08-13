@@ -92,7 +92,7 @@ const Login = () => {
     if (data.user1) {
       console.log("logged in")
       localStorage.setItem("name", data.user1.username)
-      navigate("/")
+      navigate("/home")
     }
     else {
       console.log(data)

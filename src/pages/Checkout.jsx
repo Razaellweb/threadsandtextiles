@@ -171,7 +171,7 @@ const Checkout = ({ cartx, sumx, id }) => {
     // Your recipient
     client: {
       company: name,
-      address: address,
+      address: phoneNumber,
       zip: address,
       city: address,
       country: "Nigeria",
